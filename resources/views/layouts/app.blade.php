@@ -18,7 +18,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="/admin">Panel Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/layanan">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/kontak">Kontak</a></li>
+
+                    @auth
+                        <li class="nav-item"><a class="nav-link text-warning fw-bold" href="/admin">Panel Admin</a></li>
+                        <li class="nav-item">
+                            <form action="/logout" method="POST" class="d-inline">
+                                @csrf
+                                <button type="submit" class="btn btn-link nav-link text-danger fw-bold" style="text-decoration: none;">Logout</button>
+                            </form>
+                        </li>
+                    @else
+                        <li class="nav-item"><a class="nav-link text-warning fw-bold" href="/login">Login Admin</a></li>
+                    @endauth
                 </ul>
             </div>
         </div>

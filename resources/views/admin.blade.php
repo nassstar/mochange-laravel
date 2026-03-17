@@ -4,7 +4,10 @@
 <div class="container mt-4">
     <h2 class="mb-4 fw-bold">Halaman Admin - Kelola Kurs</h2>
 
-    <a href="/tambah" class="btn btn-primary mb-3 shadow-sm">+ Tambah Mata Uang</a>
+    <div class="d-flex align-items-center gap-2 mb-3">
+        <a href="/tambah" class="btn btn-primary shadow-sm">+ Tambah Mata Uang</a>
+        <a href="/cetak" target="_blank" class="btn btn-success shadow-sm">🖨️ Cetak Laporan</a>
+    </div>
     @if(session('sukses'))
         <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
             <i class="fas fa-check-circle me-2"></i> {{ session('sukses') }}

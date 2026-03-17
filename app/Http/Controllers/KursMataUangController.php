@@ -118,4 +118,21 @@ class KursMataUangController extends Controller
 
         return redirect('/admin')->with('sukses', 'Data mata uang berhasil diperbarui!');
     }
+
+    public function layanan()
+    {
+        return view('layanan');
+    }
+
+    public function kontak()
+    {
+        return view('kontak');
+    }
+
+    // FUNGSI UNTUK CETAK LAPORAN
+    public function cetak()
+    {
+        $data_kurs = KursMataUang::all();
+        return view('cetak', compact('data_kurs'));
+    }
 }
